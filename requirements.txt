@@ -1,0 +1,9 @@
+torch
+torchvision
+torchaudio
+fastapi
+uvicorn
+pillow
+split-folders
+tqdm
+python-multipart
