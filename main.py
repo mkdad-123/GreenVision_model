@@ -22,11 +22,14 @@ class_names = [
 
 app = FastAPI()
 
-model_path = hf_hub_download(
-    repo_id="makdadTaleb/plant-disease-cnn",  # استبدل باسمك واسم الريبو
-    filename="best_model.pth"
-) 
-model = load_model(model_path)
+HF_TOKEN = "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"  
+MODEL_PATH = hf_hub_download(
+    repo_id="makdadTaleb/plant-disease-cnn", 
+    filename="best_model.pth",
+    token=HF_TOKEN
+)
+
+model = load_model(MODEL_PATH)
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
