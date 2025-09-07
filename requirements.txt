@@ -7,3 +7,4 @@ pillow
 split-folders
 tqdm
 python-multipart
+huggingface_hub

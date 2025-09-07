@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from model import load_model, predict_image
 from PIL import Image
 import io
+from huggingface_hub import hf_hub_download
 
 class_names = [
     'Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
@@ -21,7 +22,11 @@ class_names = [
 
 app = FastAPI()
 
-model = load_model("best_model.pth")
+model_path = hf_hub_download(
+    repo_id="makdadTaleb/plant-disease-cnn",  # استبدل باسمك واسم الريبو
+    filename="best_model.pth"
+) 
+model = load_model(model_path)
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):

@@ -9,7 +9,7 @@ import torch.nn.functional as F
 num_classes = 38  
 
 def load_model(weights_path="best_model18.pth"):
-    model = models.resnet18(pretrained=False)
+    model = models.resnet18(weights=None)
     model.fc = nn.Linear(model.fc.in_features, num_classes)
     weights = torch.load(weights_path , map_location="cpu")
     model.load_state_dict(weights['model_state_dict'])
