@@ -22,11 +22,9 @@ class_names = [
 
 app = FastAPI()
 
-HF_TOKEN = "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"  
 MODEL_PATH = hf_hub_download(
     repo_id="makdadTaleb/plant-disease-cnn", 
     filename="best_model.pth",
-    token=HF_TOKEN
 )
 
 model = load_model(MODEL_PATH)
