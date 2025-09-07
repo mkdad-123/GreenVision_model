@@ -1,6 +1,5 @@
 torch
 torchvision
-torchaudi
 fastapi
 pillow
 python-multipart
