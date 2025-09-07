@@ -1,10 +1,7 @@
-torch
-torchvision
-torchaudio
-fastapi
-uvicorn
-pillow
-split-folders
-tqdm
-python-multipart
-huggingface_hub
+fastapi==0.102.0
+uvicorn[standard]==0.23.2
+pillow==10.0.0
+torch==2.1.0+cpu
+torchvision==0.16.1+cpu
+huggingface_hub==0.34.4
+python-multipart==1.2.2
